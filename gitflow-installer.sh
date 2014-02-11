@@ -69,10 +69,12 @@ case "$1" in
 		install -v -d -m 0755 "$INSTALL_PREFIX"
 		for exec_file in $EXEC_FILES ; do
 			install -v -m 0755 "$REPO_NAME/$exec_file" "$INSTALL_PREFIX"
+			puts "TEST1"
 			dos2unix "$REPO_NAME/$exec_file"
 		done
 		for script_file in $SCRIPT_FILES ; do
 			install -v -m 0644 "$REPO_NAME/$script_file" "$INSTALL_PREFIX"
+			puts "TEST2"
 			dos2unix "$REPO_NAME/$script_file"
 		done
 		exit
